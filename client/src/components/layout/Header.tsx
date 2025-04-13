@@ -1,18 +1,36 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import logoImage from "../../assets/logo.png";
+import { scrollToElement, updateURLHash, getActiveSection } from "../../lib/scrollUtils";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
   
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+      
+      // Update active section based on scroll position
+      const currentSection = getActiveSection();
+      if (currentSection && currentSection !== activeSection) {
+        setActiveSection(currentSection);
+        updateURLHash(`#${currentSection}`);
+      }
     };
     
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [activeSection]);
+  
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    scrollToElement(sectionId);
+    updateURLHash(`#${sectionId}`);
+    setActiveSection(sectionId);
+    setIsMobileMenuOpen(false);
+  };
   
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -27,7 +45,7 @@ export default function Header() {
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
         <div className="flex items-center space-x-2">
           <div className="w-10 h-10 flex items-center justify-center">
-            <img src="/attached_assets/logo.png" alt="ShareZet Logo" className="w-10 h-10" />
+            <img src={logoImage} alt="ShareZet Logo" className="w-10 h-10" />
           </div>
           <span className="text-xl font-bold text-foreground">ShareZet</span>
         </div>
