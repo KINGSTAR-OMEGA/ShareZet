@@ -89,7 +89,7 @@ export default function HowItWorks() {
         >
           <motion.a 
             href="room.html" 
-            className="inline-block bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white py-3 px-8 rounded-lg text-lg font-medium shadow-lg shadow-primary/20 flex items-center justify-center space-x-2 mx-auto w-auto"
+            className="inline-block bg-gradient-to-r from-[#00b4ff] to-[#0066cc] hover:opacity-90 text-white py-3 px-8 rounded-lg text-lg font-medium shadow-lg shadow-[#00b4ff]/20 flex items-center justify-center space-x-2 mx-auto w-auto"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

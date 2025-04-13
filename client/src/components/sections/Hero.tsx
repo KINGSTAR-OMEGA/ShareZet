@@ -15,8 +15,8 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-background to-background/50 opacity-90"></div>
       
       {/* Gradient blobs */}
-      <div className="absolute -right-20 top-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-float"></div>
-      <div className="absolute -left-20 bottom-20 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-float animation-delay-200"></div>
+      <div className="absolute -right-20 top-20 w-64 h-64 bg-[#00b4ff]/10 rounded-full blur-3xl animate-float"></div>
+      <div className="absolute -left-20 bottom-20 w-80 h-80 bg-[#0066cc]/10 rounded-full blur-3xl animate-float animation-delay-200"></div>
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between">
@@ -28,7 +28,7 @@ export default function Hero() {
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight">
               <span className="text-shadow-glow">Instant</span> Text, Code & 
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00b4ff] to-[#0066cc]">
                 {" "}File Sharing
               </span>
             </h1>
@@ -40,7 +40,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
               <motion.a 
                 href="room.html" 
-                className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white py-3 px-8 rounded-lg text-lg font-medium transition duration-300 shadow-lg shadow-primary/20 flex items-center justify-center"
+                className="bg-gradient-to-r from-[#00b4ff] to-[#0066cc] hover:opacity-90 text-white py-3 px-8 rounded-lg text-lg font-medium transition duration-300 shadow-lg shadow-[#00b4ff]/20 flex items-center justify-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -78,17 +78,17 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <div className="bg-card/70 backdrop-blur-md p-6 rounded-lg text-center animate-float">
-            <div className="text-4xl font-bold text-primary mb-2">100%</div>
+            <div className="text-4xl font-bold text-[#00b4ff] mb-2">100%</div>
             <div className="text-muted-foreground">Secure End-to-End</div>
           </div>
           
           <div className="bg-card/70 backdrop-blur-md p-6 rounded-lg text-center animate-float animation-delay-200">
-            <div className="text-4xl font-bold text-secondary mb-2">0</div>
+            <div className="text-4xl font-bold text-[#0090cc] mb-2">0</div>
             <div className="text-muted-foreground">Registration Required</div>
           </div>
           
           <div className="bg-card/70 backdrop-blur-md p-6 rounded-lg text-center animate-float animation-delay-400">
-            <div className="text-4xl font-bold text-accent mb-2">∞</div>
+            <div className="text-4xl font-bold text-[#0066cc] mb-2">∞</div>
             <div className="text-muted-foreground">Unlimited Sharing</div>
           </div>
         </motion.div>
