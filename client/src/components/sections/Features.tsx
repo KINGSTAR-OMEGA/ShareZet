@@ -6,31 +6,37 @@ const features = [
     icon: "comments",
     title: "Real-Time Chat",
     description: "Instant messaging with no delays. Send text and code snippets with perfect formatting in real-time.",
+    iconColor: "#00b4ff"
   },
   {
     icon: "file-upload",
     title: "Fast File Transfer",
     description: "Share files of any type with lightning speed. No size limits, no compression, just pure performance.",
+    iconColor: "#00b4ff"
   },
   {
     icon: "code",
     title: "Code Sharing",
     description: "Share code with syntax highlighting and proper formatting. Perfect for developers and technical teams.",
+    iconColor: "#00b4ff"
   },
   {
     icon: "user-secret",
     title: "No Registration",
     description: "Start sharing instantly with no account creation, no email, and no personal information required.",
+    iconColor: "#00b4ff"
   },
   {
     icon: "shield-alt",
     title: "Private Rooms",
     description: "Create custom room codes for private sharing. Only those with the code can join your secure sharing space.",
+    iconColor: "#00b4ff"
   },
   {
     icon: "mobile-alt",
     title: "Cross-Device Compatibility",
     description: "Share between desktop, mobile, or tablet devices seamlessly with our responsive design.",
+    iconColor: "#00b4ff"
   }
 ];
 
@@ -67,7 +73,7 @@ export default function Features() {
               <GradientBorder className="p-1 group hover:shadow-lg hover:shadow-primary/20 transition duration-300 transform hover:rotate-y-5 hover:rotate-x-2">
                 <div className="bg-card rounded-lg p-6 h-full flex flex-col">
                   <div className="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
-                    <i className={`fas fa-${feature.icon} text-primary text-2xl`}></i>
+                    <i className={`fas fa-${feature.icon} text-primary text-2xl`} style={{ color: feature.iconColor }}></i>
                   </div>
                   
                   <h3 className="text-xl font-semibold mb-4 text-foreground">{feature.title}</h3>

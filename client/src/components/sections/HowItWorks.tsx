@@ -5,19 +5,19 @@ const steps = [
     number: 1,
     title: "Create a Room",
     description: "Click \"Get Started\" to instantly create a unique room. Customize the room code or use our auto-generated one.",
-    color: "primary"
+    color: "#00b4ff"
   },
   {
     number: 2,
     title: "Share Room Code",
     description: "Send the room code or link to others you want to share with. They can join instantly from any device.",
-    color: "secondary"
+    color: "#0090cc"
   },
   {
     number: 3,
     title: "Share Files & Chat",
     description: "Exchange text, code snippets, and files in real-time. No size limits, no waiting for uploads.",
-    color: "accent"
+    color: "#006b99"
   }
 ];
 
@@ -57,7 +57,8 @@ export default function HowItWorks() {
                 transition={{ duration: 0.5, delay: index * 0.2 }}
               >
                 <motion.div 
-                  className={`w-20 h-20 rounded-full bg-card border-4 border-${step.color} flex items-center justify-center mb-6 text-foreground text-2xl font-bold`}
+                  className="w-20 h-20 rounded-full bg-card border-4 flex items-center justify-center mb-6 text-foreground text-2xl font-bold"
+                  style={{ borderColor: step.color }}
                   animate={{ 
                     opacity: [0.7, 1, 0.7],
                     scale: [1, 1.05, 1]

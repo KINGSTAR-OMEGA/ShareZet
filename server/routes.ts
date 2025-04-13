@@ -10,6 +10,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
     res.json({ status: 'ok' });
   });
   
+  // Serve attached assets
+  app.use('/attached_assets', (req, res, next) => {
+    const assetPath = path.resolve(process.cwd(), 'attached_assets', req.path);
+    
+    // Check if the file exists
+    if (fs.existsSync(assetPath)) {
+      res.sendFile(assetPath);
+    } else {
+      next();
+    }
+  });
+  
   // Add an endpoint to serve the room.html file
   app.get('/room.html', (req, res) => {
     const roomHtmlPath = path.resolve(process.cwd(), 'attached_assets', 'room.html');

@@ -26,8 +26,8 @@ export default function Header() {
     <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-background/90 backdrop-blur-md shadow-md' : 'bg-transparent'}`}>
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
         <div className="flex items-center space-x-2">
-          <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-xl">SZ</span>
+          <div className="w-10 h-10 flex items-center justify-center">
+            <img src="/attached_assets/logo.png" alt="ShareZet Logo" className="w-10 h-10" />
           </div>
           <span className="text-xl font-bold text-foreground">ShareZet</span>
         </div>
