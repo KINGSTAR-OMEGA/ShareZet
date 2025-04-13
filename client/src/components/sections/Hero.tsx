@@ -2,11 +2,15 @@ import { motion } from "framer-motion";
 import { Suspense } from "react";
 import { GradientBorder } from "@/components/ui/gradient-border";
 import ChatWindow from "@/components/ui/chat-window";
+import ThreeBackground from "../effects/ThreeBackground";
 
 export default function Hero() {
   return (
     <section className="relative overflow-hidden pt-20 pb-32">
-      {/* Animated Background */}
+      {/* Three.js Animated Background */}
+      <ThreeBackground color="#00b4ff" />
+      
+      {/* Stars Animated Background */}
       <div className="absolute inset-0 opacity-30" style={{ zIndex: 0 }}>
         <div className="stars"></div>
       </div>
