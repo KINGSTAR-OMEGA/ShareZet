@@ -51,12 +51,36 @@ export default function Header() {
         </div>
         
         <div className="hidden md:flex items-center space-x-8">
-          <a href="#features" className="text-muted-foreground hover:text-foreground transition duration-300">Features</a>
-          <a href="#how-it-works" className="text-muted-foreground hover:text-foreground transition duration-300">How It Works</a>
-          <a href="#security" className="text-muted-foreground hover:text-foreground transition duration-300">Security</a>
-          <a href="#faq" className="text-muted-foreground hover:text-foreground transition duration-300">FAQ</a>
+          <a 
+            href="#features" 
+            onClick={(e) => handleNavClick(e, 'features')}
+            className={`transition duration-300 ${activeSection === 'features' ? 'text-[#00b4ff] font-medium' : 'text-muted-foreground hover:text-foreground'}`}
+          >
+            Features
+          </a>
+          <a 
+            href="#how-it-works" 
+            onClick={(e) => handleNavClick(e, 'how-it-works')}
+            className={`transition duration-300 ${activeSection === 'how-it-works' ? 'text-[#00b4ff] font-medium' : 'text-muted-foreground hover:text-foreground'}`}
+          >
+            How It Works
+          </a>
+          <a 
+            href="#security" 
+            onClick={(e) => handleNavClick(e, 'security')}
+            className={`transition duration-300 ${activeSection === 'security' ? 'text-[#00b4ff] font-medium' : 'text-muted-foreground hover:text-foreground'}`}
+          >
+            Security
+          </a>
+          <a 
+            href="#faq" 
+            onClick={(e) => handleNavClick(e, 'faq')}
+            className={`transition duration-300 ${activeSection === 'faq' ? 'text-[#00b4ff] font-medium' : 'text-muted-foreground hover:text-foreground'}`}
+          >
+            FAQ
+          </a>
           <motion.a 
-            href="room.html" 
+            href="room" 
             className="bg-primary hover:bg-primary/90 text-white py-2 px-6 rounded-lg transition duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

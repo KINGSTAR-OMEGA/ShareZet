@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import logoImage from "../../assets/logo.png";
 
 export default function Footer() {
   return (
@@ -13,7 +14,7 @@ export default function Footer() {
           >
             <div className="flex items-center space-x-2 mb-6">
               <div className="w-10 h-10 flex items-center justify-center">
-                <img src="/attached_assets/logo.png" alt="ShareZet Logo" className="w-10 h-10" />
+              <img src={logoImage} alt="ShareZet Logo" className="w-10 h-10" />
               </div>
               <span className="text-xl font-bold text-foreground">ShareZet</span>
             </div>

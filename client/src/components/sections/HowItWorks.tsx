@@ -24,7 +24,7 @@ const steps = [
 export default function HowItWorks() {
   return (
     <section id="how-it-works" className="py-20 bg-background relative">
-      <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-card/30 to-background"></div>
+      <div className="absolute top-0 left-0 w-full h-22 bg-gradient-to-b from-card/30 to-background"></div>
       
       <div className="container mx-auto px-6">
         <motion.div 
@@ -88,7 +88,7 @@ export default function HowItWorks() {
           transition={{ duration: 0.6, delay: 0.5 }}
         >
           <motion.a 
-            href="room.html" 
+            href="room" 
             className="inline-block bg-gradient-to-r from-[#00b4ff] to-[#0066cc] hover:opacity-90 text-white py-3 px-8 rounded-lg text-lg font-medium shadow-lg shadow-[#00b4ff]/20 flex items-center justify-center space-x-2 mx-auto w-auto"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

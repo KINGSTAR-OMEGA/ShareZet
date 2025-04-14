@@ -11,13 +11,13 @@ const features = [
   {
     icon: "file-upload",
     title: "Fast File Transfer",
-    description: "Share files of any type with lightning speed. No size limits, no compression, just pure performance.",
+    description: "Share files of any type with lightning speed. Upto 7Mb , No compression, just pure performance.",
     iconColor: "#00b4ff"
   },
   {
     icon: "code",
     title: "Code Sharing",
-    description: "Share code with syntax highlighting and proper formatting. Perfect for developers and technical teams.",
+    description: "Seamlessly share code snippets and  code files with your team and and fellow devlopers.",
     iconColor: "#00b4ff"
   },
   {
@@ -29,7 +29,7 @@ const features = [
   {
     icon: "shield-alt",
     title: "Private Rooms",
-    description: "Create custom room codes for private sharing. Only those with the code can join your secure sharing space.",
+    description: "Create custom room codes for private sharing. Only those with the code can join your room",
     iconColor: "#00b4ff"
   },
   {
@@ -43,7 +43,7 @@ const features = [
 export default function Features() {
   return (
     <section id="features" className="py-20 bg-card/30 relative">
-      <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-background to-card/30"></div>
+      
       
       <div className="container mx-auto px-6">
         <motion.div 

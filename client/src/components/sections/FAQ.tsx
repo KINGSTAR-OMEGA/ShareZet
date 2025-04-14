@@ -36,7 +36,7 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section id="faq" className="py-20 bg-background relative">
+    <section id="faq" className="pt-28 bg-background relative">
       <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-card/30 to-background"></div>
       
       <div className="container mx-auto px-6">

@@ -2,15 +2,11 @@ import { motion } from "framer-motion";
 import { Suspense } from "react";
 import { GradientBorder } from "@/components/ui/gradient-border";
 import ChatWindow from "@/components/ui/chat-window";
-import ThreeBackground from "../effects/ThreeBackground";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pt-20 pb-32">
-      {/* Three.js Animated Background */}
-      <ThreeBackground color="#00b4ff" />
-      
-      {/* Stars Animated Background */}
+    <section className="relative overflow-hidden py-20 pb-25">
+      {/* Animated Background */}
       <div className="absolute inset-0 opacity-30" style={{ zIndex: 0 }}>
         <div className="stars"></div>
       </div>
@@ -33,7 +29,7 @@ export default function Hero() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight">
               <span className="text-shadow-glow">Instant</span> Text, Code & 
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00b4ff] to-[#0066cc]">
-                {" "}File Sharing
+                {" "}File Share Online
               </span>
             </h1>
             

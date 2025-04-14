@@ -1,4 +1,5 @@
 import type { Express } from "express";
+import express from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import path from 'path';
@@ -22,8 +23,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
   
+    // Serve all static assets (CSS, JS, etc.) from the attached_assets folder
+    app.use("/assets", express.static(path.join(process.cwd(), "attached_assets")));
+
   // Add an endpoint to serve the room.html file
-  app.get('/room.html', (req, res) => {
+  app.get('/room', (req, res) => {
     const roomHtmlPath = path.resolve(process.cwd(), 'attached_assets', 'room.html');
     
     // Check if the file exists

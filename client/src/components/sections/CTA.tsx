@@ -1,13 +1,9 @@
 import { motion } from "framer-motion";
-import ThreeBackground from "../effects/ThreeBackground";
 
 export default function CTA() {
   return (
     <section className="py-20 bg-card/30 relative">
       <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-background to-card/30"></div>
-      
-      {/* Three.js Background */}
-      <ThreeBackground color="#0066cc" />
       
       {/* Background elements */}
       <div className="absolute -left-20 top-20 w-80 h-80 bg-[#00b4ff]/5 rounded-full blur-3xl"></div>
@@ -30,7 +26,7 @@ export default function CTA() {
           </p>
           
           <motion.a 
-            href="room.html" 
+            href="room" 
             className="inline-block bg-gradient-to-r from-[#00b4ff] to-[#0066cc] hover:opacity-90 text-white py-4 px-10 rounded-lg text-xl font-medium shadow-lg shadow-[#00b4ff]/20"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

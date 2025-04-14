@@ -25,7 +25,7 @@ const securityFeatures = [
 export default function Security() {
   return (
     <section id="security" className="py-20 bg-card/30 relative">
-      <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-background to-card/30"></div>
+      <div className="absolute top-0 left-0 w-full h-22 bg-gradient-to-b from-background to-card/30"></div>
       
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-center">
