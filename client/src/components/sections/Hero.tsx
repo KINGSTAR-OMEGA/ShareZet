@@ -39,7 +39,7 @@ export default function Hero() {
             
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
               <motion.a 
-                href="room.html" 
+                href="room" 
                 className="bg-gradient-to-r from-[#00b4ff] to-[#0066cc] hover:opacity-90 text-white py-3 px-8 rounded-lg text-lg font-medium transition duration-300 shadow-lg shadow-[#00b4ff]/20 flex items-center justify-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

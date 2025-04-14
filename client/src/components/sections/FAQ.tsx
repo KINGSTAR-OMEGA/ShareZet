@@ -9,16 +9,17 @@ import {
 
 const faqs = [
   {
+    question: "Why is ShareZet the best choice for sharing text, files, and code online?",
+    answer: "ShareZet is designed for speed, simplicity, and privacy. With no sign-ups, no tracking, and instant room creation, it makes sharing seamless and secure. Whether you're sharing code snippets, documents, or  files, everything is done in real-time with end-to-end privacy in mind."
+  }
+,  
+  {
     question: "Is ShareZet really free to use?",
     answer: "Yes, ShareZet is completely free with no hidden costs or premium tiers. We believe in accessible file sharing for everyone."
   },
   {
     question: "How long are files stored on ShareZet?",
     answer: "We don't store your files on our servers. Files are transferred directly between participants and disappear when your session ends."
-  },
-  {
-    question: "Is there a file size limit?",
-    answer: "There's no hard limit on file sizes, but very large files may be affected by your internet connection speed."
   },
   {
     question: "How many people can join a room?",
@@ -28,6 +29,7 @@ const faqs = [
     question: "Can I password-protect my room?",
     answer: "Custom room codes act as passwords. Create a unique, complex room code for maximum security."
   },
+
   {
     question: "What devices are supported?",
     answer: "ShareZet works on any device with a modern web browser, including desktops, laptops, tablets, and smartphones."
