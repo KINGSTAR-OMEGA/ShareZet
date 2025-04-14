@@ -113,7 +113,7 @@ export default function Header() {
               <a href="#how-it-works" className="text-muted-foreground hover:text-foreground transition duration-300" onClick={closeMenu}>How It Works</a>
               <a href="#security" className="text-muted-foreground hover:text-foreground transition duration-300" onClick={closeMenu}>Security</a>
               <a href="#faq" className="text-muted-foreground hover:text-foreground transition duration-300" onClick={closeMenu}>FAQ</a>
-              <a href="room.html" className="bg-primary hover:bg-primary-dark text-white py-2 px-6 rounded-lg transition duration-300 text-center">
+              <a href="room" className="bg-primary hover:bg-primary-dark text-white py-2 px-6 rounded-lg transition duration-300 text-center">
                 Get Started
               </a>
             </div>
