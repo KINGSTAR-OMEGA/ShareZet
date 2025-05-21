@@ -81,7 +81,7 @@ export default function Header() {
           </a>
           <motion.a 
             href="room" 
-            className="bg-primary hover:bg-primary/90 text-white py-2 px-6 rounded-lg transition duration-300"
+            className="bg-primary hover:bg-primary/99 text-white py-2 px-6 rounded-lg transition duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

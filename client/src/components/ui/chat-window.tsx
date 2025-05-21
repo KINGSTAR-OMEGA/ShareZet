@@ -54,9 +54,11 @@ export default function ChatWindow() {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           />
-          <button className="bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded-r-lg transition">
-            <i className="fas fa-paper-plane"></i>
-          </button>
+        <button className="bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded-r-lg transition">
+  <span className="sr-only">Send</span>
+  <i className="fas fa-paper-plane"></i>
+</button>
+
         </div>
       </div>
     </div>

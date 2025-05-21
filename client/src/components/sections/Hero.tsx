@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Suspense } from "react";
 import { GradientBorder } from "@/components/ui/gradient-border";
 import ChatWindow from "@/components/ui/chat-window";
 
@@ -7,10 +6,10 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden py-20 pb-25">
       {/* Animated Background */}
-      <div className="absolute inset-0 opacity-30" style={{ zIndex: 0 }}>
+      {/* <div className="absolute inset-0 opacity-100" style={{ zIndex: 0 }}>
         <div className="stars"></div>
       </div>
-      
+       */}
       {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background to-background/50 opacity-90"></div>
       

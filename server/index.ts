@@ -339,8 +339,8 @@ app.get("/room/:roomId", (req, res) => {
     serveStatic(app);
   }
   const port = process.env.PORT || 5000; // Allows hosting services to assign a port
-  const host = "0.0.0.0"; // Public-facing
-  // const host = "127.0.0.1";
+  // const host = "0.0.0.0"; // Public-facing
+  const host = "127.0.0.1";
   
   try {
     server.listen({ port, host }, () => {
