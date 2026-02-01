@@ -2,16 +2,17 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import logoImage from "../../assets/logo.png";
 import { scrollToElement, updateURLHash, getActiveSection } from "../../lib/scrollUtils";
+import { FaBars } from "react-icons/fa";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
-  
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
-      
+
       // Update active section based on scroll position
       const currentSection = getActiveSection();
       if (currentSection && currentSection !== activeSection) {
@@ -19,11 +20,11 @@ export default function Header() {
         updateURLHash(`#${currentSection}`);
       }
     };
-    
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [activeSection]);
-  
+
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault();
     scrollToElement(sectionId);
@@ -31,17 +32,17 @@ export default function Header() {
     setActiveSection(sectionId);
     setIsMobileMenuOpen(false);
   };
-  
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-  
+
   const closeMenu = () => {
     setIsMobileMenuOpen(false);
   };
-  
+
   return (
-    <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-background/90 backdrop-blur-md shadow-md' : 'bg-transparent'}`}>
+    <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/60 backdrop-blur-xl border-b border-white/10 shadow-2xl' : 'bg-transparent'}`}>
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
         <div className="flex items-center space-x-2">
           <div className="w-10 h-10 flex items-center justify-center">
@@ -49,38 +50,38 @@ export default function Header() {
           </div>
           <span className="text-xl font-bold text-foreground">ShareZet</span>
         </div>
-        
+
         <div className="hidden md:flex items-center space-x-8">
-          <a 
-            href="#features" 
+          <a
+            href="#features"
             onClick={(e) => handleNavClick(e, 'features')}
             className={`transition duration-300 ${activeSection === 'features' ? 'text-[#00b4ff] font-medium' : 'text-muted-foreground hover:text-foreground'}`}
           >
             Features
           </a>
-          <a 
-            href="#how-it-works" 
+          <a
+            href="#how-it-works"
             onClick={(e) => handleNavClick(e, 'how-it-works')}
             className={`transition duration-300 ${activeSection === 'how-it-works' ? 'text-[#00b4ff] font-medium' : 'text-muted-foreground hover:text-foreground'}`}
           >
             How It Works
           </a>
-          <a 
-            href="#security" 
+          <a
+            href="#security"
             onClick={(e) => handleNavClick(e, 'security')}
             className={`transition duration-300 ${activeSection === 'security' ? 'text-[#00b4ff] font-medium' : 'text-muted-foreground hover:text-foreground'}`}
           >
             Security
           </a>
-          <a 
-            href="#faq" 
+          <a
+            href="#faq"
             onClick={(e) => handleNavClick(e, 'faq')}
             className={`transition duration-300 ${activeSection === 'faq' ? 'text-[#00b4ff] font-medium' : 'text-muted-foreground hover:text-foreground'}`}
           >
             FAQ
           </a>
-          <motion.a 
-            href="room" 
+          <motion.a
+            href="room"
             className="bg-primary hover:bg-primary/99 text-white py-2 px-6 rounded-lg transition duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -88,20 +89,20 @@ export default function Header() {
             Get Started
           </motion.a>
         </div>
-        
-        <button 
-          className="md:hidden text-foreground focus:outline-none" 
+
+        <button
+          className="md:hidden text-foreground focus:outline-none"
           onClick={toggleMobileMenu}
           aria-label="Toggle mobile menu"
         >
-          <i className="fas fa-bars text-xl"></i>
+          <FaBars className="text-xl" />
         </button>
       </nav>
-      
+
       {/* Mobile menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div 
+          <motion.div
             className="md:hidden absolute w-full bg-card z-20 py-4 px-6 shadow-lg"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}

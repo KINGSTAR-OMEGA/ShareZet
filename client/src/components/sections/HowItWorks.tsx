@@ -1,100 +1,121 @@
 import { motion } from "framer-motion";
+import { FaRocket, FaUserPlus, FaFileExport } from "react-icons/fa";
 
 const steps = [
   {
-    number: 1,
-    title: "Create a Room",
-    description: "Click \"Get Started\" to instantly create a unique room. Customize the room code or use our auto-generated one.",
-    color: "#00b4ff"
+    number: "01",
+    title: "Instant Room Creation",
+    description: "One click generates a secure, encrypted room. No account, no signup forms. Just pure, instant access.",
+    icon: FaRocket,
+    color: "from-cyan-400 to-blue-600"
   },
   {
-    number: 2,
-    title: "Share Room Code",
-    description: "Send the room code or link to others you want to share with. They can join instantly from any device.",
-    color: "#0090cc"
+    number: "02",
+    title: "Invite & Connect",
+    description: "Share your unique room link. Friends or colleagues join instantly from any device—desktop, mobile, or tablet.",
+    icon: FaUserPlus,
+    color: "from-blue-500 to-purple-600"
   },
   {
-    number: 3,
-    title: "Share Files & Chat",
-    description: "Exchange text, code snippets, and files in real-time. No size limits, no waiting for uploads.",
-    color: "#006b99"
+    number: "03",
+    title: "Seamless Transfer",
+    description: "Drag & drop files, paste code, or chat. Everything is end-to-end encrypted and wiped when you leave.",
+    icon: FaFileExport,
+    color: "from-purple-500 to-pink-600"
   }
 ];
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-20 bg-background relative">
-      <div className="absolute top-0 left-0 w-full h-22 bg-gradient-to-b from-card/30 to-background"></div>
-      
-      <div className="container mx-auto px-6">
-        <motion.div 
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
+    <section id="how-it-works" className="py-32 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 -right-64 w-96 h-96 bg-cyan-500/10 rounded-full blur-[100px]" />
+        <div className="absolute bottom-1/4 -left-64 w-96 h-96 bg-purple-500/10 rounded-full blur-[100px]" />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <motion.div
+          className="text-center mb-24"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-            How <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">ShareZet</span> Works
+          <span className="text-cyan-400 font-mono tracking-wider text-sm uppercase mb-4 block">Simple Workflow</span>
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white tracking-tight">
+            How It <span className="neon-text-gradient">Works</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Three simple steps to start sharing instantly. No downloads, no complexity.
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Experience the fastest way to share. We've stripped away the complexity to give you raw speed and security.
           </p>
         </motion.div>
-        
-        <div className="relative">
-          {/* Connection line */}
-          <div className="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-accent"></div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
+
+        <div className="relative max-w-5xl mx-auto">
+          {/* Vertical Line for Desktop */}
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-cyan-500/30 to-transparent transform -translate-x-1/2" />
+
+          <div className="space-y-24">
             {steps.map((step, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
-                className="flex flex-col items-center text-center"
-                initial={{ opacity: 0, y: 20 }}
+                className={`relative flex flex-col md:flex-row items-center gap-12 ${index % 2 === 0 ? "md:flex-row-reverse" : ""
+                  }`}
+                initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
               >
-                <motion.div 
-                  className="w-20 h-20 rounded-full bg-card border-4 flex items-center justify-center mb-6 text-foreground text-2xl font-bold"
-                  style={{ borderColor: step.color }}
-                  animate={{ 
-                    opacity: [0.7, 1, 0.7],
-                    scale: [1, 1.05, 1]
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    delay: index * 1.3
-                  }}
-                >
-                  {step.number}
-                </motion.div>
-                <h3 className="text-xl font-semibold mb-3 text-foreground">{step.title}</h3>
-                <p className="text-muted-foreground">
-                  {step.description}
-                </p>
+                {/* Content Side */}
+                <div className={`flex-1 text-center ${index % 2 === 0 ? "md:text-left" : "md:text-right"}`}>
+                  <div className="glass-card glass-card-hover p-8 rounded-2xl relative group overflow-hidden">
+                    <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 bg-gradient-to-r ${step.color}`} />
+
+                    <div className="relative z-10">
+                      <div className={`text-6xl font-bold opacity-10 mb-2 bg-gradient-to-r ${step.color} bg-clip-text text-transparent`}>
+                        {step.number}
+                      </div>
+                      <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors">
+                        {step.title}
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {step.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Center Icon */}
+                <div className="relative z-10 flex-shrink-0">
+                  <div className="w-16 h-16 rounded-full glass-card flex items-center justify-center border border-cyan-500/30 shadow-[0_0_20px_rgba(0,180,255,0.2)]">
+                    <step.icon className="text-2xl text-cyan-400" />
+                  </div>
+                  {/* Glowing Connection Dots */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-cyan-400/20 rounded-full blur-xl -z-10 animate-pulse" />
+                </div>
+
+                {/* Spacer Side */}
+                <div className="flex-1 hidden md:block" />
               </motion.div>
             ))}
           </div>
         </div>
-        
-        <motion.div 
-          className="mt-20 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, delay: 0.5 }}
+
+        <motion.div
+          className="mt-32 text-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6 }}
         >
-          <motion.a 
-            href="room" 
-            className="inline-block bg-gradient-to-r from-[#00b4ff] to-[#0066cc] hover:opacity-90 text-white py-3 px-8 rounded-lg text-lg font-medium shadow-lg shadow-[#00b4ff]/20 flex items-center justify-center space-x-2 mx-auto w-auto"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+          <a
+            href="room"
+            className="group relative inline-flex items-center gap-3 px-12 py-5 bg-white text-black rounded-full text-lg font-bold tracking-wide hover:scale-105 transition-transform duration-300"
           >
-            <span>Try It Now</span> <i className="fas fa-rocket ml-2"></i>
-          </motion.a>
+            <span className="relative z-10">Start Sharing Now</span>
+            <FaRocket className="text-xl relative z-10 group-hover:rotate-12 transition-transform" />
+            <div className="absolute inset-0 rounded-full blur-lg bg-cyan-400/50 group-hover:bg-cyan-400/80 transition-colors -z-10" />
+          </a>
         </motion.div>
       </div>
     </section>

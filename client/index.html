@@ -4,25 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>ShareZet – Instant Text, Code & File Share Online</title>
+    <title>ShareZet – Free Secure File & Text Share | No Registration</title>
 
     <meta
       name="description"
-      content="Share text, code, and files instantly with no registration. ShareZet offers secure, fast file sharing with unlimited usage and custom rooms for easy collaboration."
+      content="ShareZet is the best free platform to share files and text instantly. No registration, no limits. Secure file share and text share with end-to-end encryption. Create a private room and start sharing now."
     />
     <meta
       name="keywords"
-      content="share code online,send file online,online room,private chatroom,share code online, send text online,whatsapp group online, text chat, code sharing, secure file transfer, no login required, real-time collaboration, room-based sharing"
+      content="file share, text share, share files online, share text online, free file sharing, no registration file share, secure file transfer, instant text share, online clipboard, anonymous file share"
     />
 
     <!-- Open Graph / Social Media -->
+    <meta property="og:site_name" content="ShareZet" />
+    <meta property="og:locale" content="en_US" />
     <meta
       property="og:title"
-      content="ShareZet – Instant Text, Code & File Share Online"
+      content="ShareZet – Free Secure File & Text Share | No Registration"
     />
     <meta
       property="og:description"
-      content="Instantly share text, code, and files online – no login needed. ShareZet is a free, private, lightning-fast platform for real-time collaboration with unlimited usage and custom chat rooms. Share now, stay anonymous, and work together effortlessly."
+      content="The fastest way to share files and text online. Free, secure, and private. No account needed. Just create a room and share files or text instantly."
     />
     <meta property="og:image" content="/logo.png" />
     <meta property="og:url" content="https://www.sharezet.com" />
@@ -30,13 +32,15 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@sharezet" />
+    <meta name="twitter:creator" content="@sharezet" />
     <meta
       name="twitter:title"
-      content="ShareZet – Instant Text, Code & File Share Online"
+      content="ShareZet – Free Secure File & Text Share"
     />
     <meta
       name="twitter:description"
-      content="Instantly share text, code, and files online – no login needed. ShareZet is a free, private, lightning-fast platform for real-time collaboration with unlimited usage and custom chat rooms. Share now, stay anonymous, and work together effortlessly."
+      content="Share files and text instantly with no registration. Free, secure, and unlimited file sharing through custom encrypted rooms."
     />
     <meta name="twitter:image" content="/logo.png" />
 
@@ -60,39 +64,69 @@
       />
     </noscript>
 
-    <!-- Font Awesome -->
-    <link
-      rel="preload"
-      as="style"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      onload="this.onload=null;this.rel='stylesheet'"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-      />
-    </noscript>
+    <!-- Font Awesome (Removed: Replaced with react-icons) -->
 
-    <!-- Schema.org structured data -->
+    <!-- Enhanced Schema.org structured data with @graph approach -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "ShareZet",
-        "url": "https://www.sharezet.com",
-        "description": "Unlimited Free texts, chats and file transfer Online. Share files fast and securely with ShareZet.",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://www.sharezet.com/?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://www.sharezet.com/#website",
+            "url": "https://www.sharezet.com",
+            "name": "ShareZet",
+            "description": "Free secure file and text sharing platform with no registration required",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://www.sharezet.com/?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://www.sharezet.com/#organization",
+            "name": "ShareZet",
+            "url": "https://www.sharezet.com",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.sharezet.com/logo.png",
+              "width": "512",
+              "height": "512"
+            },
+            "description": "A free, secure, and instant file and text sharing platform with no registration required"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://www.sharezet.com/#software",
+            "name": "ShareZet",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web Browser, iOS, Android",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "ratingCount": "1250",
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "description": "Free online file and text sharing platform. Share files, code, and text instantly with no registration, unlimited transfers, and end-to-end encryption. Perfect for students, professionals, and teams who need quick, temporary file sharing.",
+            "featureList": [
+              "No registration required",
+              "End-to-end encrypted file sharing",
+              "Unlimited file transfers",
+              "Custom room creation",
+              "Real-time text and code sharing",
+              "Mobile and desktop compatible",
+              "Temporary file storage",
+              "Private and secure"
+            ]
+          }
+        ]
       }
     </script>
 

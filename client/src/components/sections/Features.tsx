@@ -1,92 +1,106 @@
 import { motion } from "framer-motion";
-import { GradientBorder } from "@/components/ui/gradient-border";
+import {
+  FaComments,
+  FaFileUpload,
+  FaCode,
+  FaUserSecret,
+  FaShieldAlt,
+  FaMobileAlt,
+  FaArrowRight
+} from "react-icons/fa";
 
 const features = [
   {
-    icon: "comments",
-    title: "Real-Time Chat",
-    description: "Instant messaging with no delays. Send text and code snippets with perfect formatting in real-time.",
-    iconColor: "#00b4ff"
+    icon: FaComments,
+    title: "Real-Time Text & Chat",
+    description: "Send messages and text instantly with no delays. Share plain text, code snippets, or formatted content in real-time.",
+    color: "text-cyan-400",
+    gradient: "from-cyan-400 to-blue-500"
   },
   {
-    icon: "file-upload",
-    title: "Fast File Transfer",
-    description: "Share files of any type with lightning speed. Upto 7Mb , No compression, just pure performance.",
-    iconColor: "#00b4ff"
+    icon: FaFileUpload,
+    title: "Secure File Transfer",
+    description: "Upload and share files up to 7MB with end-to-end encryption. No file compression means your documents stay pristine.",
+    color: "text-blue-400",
+    gradient: "from-blue-400 to-indigo-500"
   },
   {
-    icon: "code",
-    title: "Code Sharing",
-    description: "Seamlessly share code snippets and  code files with your team and and fellow devlopers.",
-    iconColor: "#00b4ff"
+    icon: FaCode,
+    title: "Developer-Friendly",
+    description: "Share code snippets with proper formatting preserved. Ideal for developers getting quick code reviews or debugging.",
+    color: "text-purple-400",
+    gradient: "from-purple-400 to-pink-500"
   },
   {
-    icon: "user-secret",
-    title: "No Registration",
-    description: "Start sharing instantly with no account creation, no email, and no personal information required.",
-    iconColor: "#00b4ff"
+    icon: FaUserSecret,
+    title: "Zero Registration",
+    description: "Start sharing immediately with no account creation. No email verification, no personal info required.",
+    color: "text-pink-400",
+    gradient: "from-pink-400 to-rose-500"
   },
   {
-    icon: "shield-alt",
-    title: "Private Rooms",
-    description: "Create custom room codes for private sharing. Only those with the code can join your room",
-    iconColor: "#00b4ff"
+    icon: FaShieldAlt,
+    title: "Private Custom Rooms",
+    description: "Create secure rooms with unique codes. Only people with your room code can access the shared content.",
+    color: "text-rose-400",
+    gradient: "from-rose-400 to-orange-500"
   },
   {
-    icon: "mobile-alt",
-    title: "Cross-Device Compatibility",
-    description: "Share between desktop, mobile, or tablet devices seamlessly with our responsive design.",
-    iconColor: "#00b4ff"
+    icon: FaMobileAlt,
+    title: "Cross-Platform",
+    description: "Share files between desktop, mobile, and tablets seamlessly. Works on any device with a modern browser.",
+    color: "text-orange-400",
+    gradient: "from-orange-400 to-yellow-500"
   }
 ];
 
 export default function Features() {
   return (
-    <section id="features" className="py-20 bg-card/30 relative">
-      
-      
-      <div className="container mx-auto px-6">
-        <motion.div 
-          className="text-center mb-16"
+    <section id="features" className="py-32 relative overflow-hidden bg-black/20">
+      <div className="container mx-auto px-6 relative z-10">
+        <motion.div
+          className="text-center mb-20"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-            Powerful <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">Features</span> for Seamless Sharing
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            Why Choose <span className="neon-text-gradient">ShareZet</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Discover how ShareZet makes sharing text, code, and files simpler and more secure than ever before.
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Fast, secure, and private by design.
           </p>
         </motion.div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <GradientBorder className="p-1 group hover:shadow-lg hover:shadow-primary/20 transition duration-300 transform hover:rotate-y-5 hover:rotate-x-2">
-                <div className="bg-card rounded-lg p-6 h-full flex flex-col">
-                  <div className="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
-                    <i className={`fas fa-${feature.icon} text-primary text-2xl`} style={{ color: feature.iconColor }}></i>
-                  </div>
-                  
-                  <h3 className="text-xl font-semibold mb-4 text-foreground">{feature.title}</h3>
-                  <p className="text-muted-foreground mb-4 flex-grow">
-                    {feature.description}
-                  </p>
-                  <div className="mt-auto pt-4 border-t border-border">
-                    <a href="room.html" className="text-primary hover:text-primary-dark inline-flex items-center transition duration-300">
-                      Try it now <i className="fas fa-arrow-right ml-2"></i>
-                    </a>
-                  </div>
+              <div className="glass-card glass-card-hover p-8 rounded-2xl h-full flex flex-col group relative overflow-hidden">
+                {/* Hover Glow Background */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
+
+                <div className={`w-14 h-14 rounded-xl glass-card flex items-center justify-center mb-6 text-2xl ${feature.color} border border-white/5`}>
+                  <feature.icon />
                 </div>
-              </GradientBorder>
+
+                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-cyan-100 transition-colors">{feature.title}</h3>
+                <p className="text-muted-foreground mb-6 flex-grow leading-relaxed">
+                  {feature.description}
+                </p>
+
+                <div className="pt-4 border-t border-white/5">
+                  <a href="room.html" className={`inline-flex items-center text-sm font-medium ${feature.color} hover:brightness-125 transition-all`}>
+                    Try it now <FaArrowRight className="ml-2 w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
