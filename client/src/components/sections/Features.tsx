@@ -28,8 +28,8 @@ const features = [
     icon: FaCode,
     title: "Developer-Friendly",
     description: "Share code snippets with proper formatting preserved. Ideal for developers getting quick code reviews or debugging.",
-    color: "text-purple-400",
-    gradient: "from-purple-400 to-pink-500"
+    color: "text-blue-400",
+    gradient: "from-blue-400 to-cyan-500"
   },
   {
     icon: FaUserSecret,
@@ -56,7 +56,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="py-32 relative overflow-hidden bg-black/20">
+    <section id="features" className="py-16 md:py-32 relative overflow-hidden bg-black/20">
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
           className="text-center mb-20"
@@ -65,10 +65,10 @@ export default function Features() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
             Why Choose <span className="neon-text-gradient">ShareZet</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Fast, secure, and private by design.
           </p>
         </motion.div>
@@ -86,17 +86,17 @@ export default function Features() {
                 {/* Hover Glow Background */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
 
-                <div className={`w-14 h-14 rounded-xl glass-card flex items-center justify-center mb-6 text-2xl ${feature.color} border border-white/5`}>
+                <div className={`w-12 h-12 md:w-14 md:h-14 rounded-xl glass-card flex items-center justify-center mb-6 text-xl md:text-2xl ${feature.color} border border-white/5`}>
                   <feature.icon />
                 </div>
 
-                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-cyan-100 transition-colors">{feature.title}</h3>
-                <p className="text-muted-foreground mb-6 flex-grow leading-relaxed">
+                <h3 className="text-lg md:text-xl font-bold mb-3 text-white group-hover:text-cyan-100 transition-colors">{feature.title}</h3>
+                <p className="text-sm md:text-base text-muted-foreground mb-6 flex-grow leading-relaxed">
                   {feature.description}
                 </p>
 
                 <div className="pt-4 border-t border-white/5">
-                  <a href="room.html" className={`inline-flex items-center text-sm font-medium ${feature.color} hover:brightness-125 transition-all`}>
+                  <a href="room" className={`inline-flex items-center text-sm font-medium ${feature.color} hover:brightness-125 transition-all`}>
                     Try it now <FaArrowRight className="ml-2 w-3 h-3 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>

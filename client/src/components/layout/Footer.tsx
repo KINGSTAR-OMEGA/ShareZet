@@ -4,7 +4,7 @@ import { FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-white/5 bg-black/40 backdrop-blur-lg pt-20 pb-10 overflow-hidden">
+    <footer className="relative border-t border-white/5 bg-black/40 backdrop-blur-lg pt-10 md:pt-20 pb-10 overflow-hidden">
       {/* Top Glow Line */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent shadow-[0_0_20px_rgba(0,180,255,0.5)]" />
 
@@ -17,14 +17,14 @@ export default function Footer() {
             transition={{ duration: 0.5 }}
           >
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 flex items-center justify-center bg-cyan-500/10 rounded-xl border border-cyan-500/20">
+              <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-cyan-500/10 rounded-xl border border-cyan-500/20">
                 <img
                   src={logoImage}
                   alt="ShareZet Logo"
                   className="w-8 h-8"
                 />
               </div>
-              <span className="text-2xl font-bold text-white tracking-tight">
+              <span className="text-xl md:text-2xl font-bold text-white tracking-tight">
                 ShareZet
               </span>
             </div>
@@ -100,13 +100,13 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <h3 className="text-white font-semibold text-lg mb-6 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-purple-500" /> Legal
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-500" /> Legal
             </h3>
             <ul className="space-y-3">
               {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((item, idx) => (
                 <li key={idx}>
-                  <a href={`/${item.toLowerCase().replace(/ /g, '-')}`} className="text-muted-foreground hover:text-purple-400 transition duration-300 flex items-center gap-2 group">
-                    <span className="w-1 h-1 rounded-full bg-white/20 group-hover:bg-purple-400 transition-colors" />
+                  <a href={`/${item.toLowerCase().replace(/ /g, '-')}`} className="text-muted-foreground hover:text-blue-400 transition duration-300 flex items-center gap-2 group">
+                    <span className="w-1 h-1 rounded-full bg-white/20 group-hover:bg-blue-400 transition-colors" />
                     {item}
                   </a>
                 </li>

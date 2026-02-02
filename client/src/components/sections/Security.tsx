@@ -20,14 +20,14 @@ const securityFeatures = [
     icon: FaUserShield,
     title: "Anonymity First",
     description: "No metadata logging. No IP tracking. Pure, private connection tunnels.",
-    colorClass: "text-purple-400",
-    bgClass: "bg-purple-400/20"
+    colorClass: "text-blue-400",
+    bgClass: "bg-blue-400/20"
   }
 ];
 
 export default function Security() {
   return (
-    <section id="security" className="py-32 relative overflow-hidden">
+    <section id="security" className="py-16 md:py-32 relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-500/5 rounded-full blur-[120px]" />
@@ -77,23 +77,23 @@ export default function Security() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">
+            <h2 className="text-3xl md:text-5xl font-bold mb-8 text-white">
               Military-Grade <span className="text-emerald-400 drop-shadow-[0_0_10px_rgba(52,211,153,0.5)]">Security</span>
             </h2>
 
-            <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
+            <p className="text-base md:text-xl text-muted-foreground mb-12 leading-relaxed">
               We don't just protect your data; we ensure it never exists on our servers longer than necessary.
             </p>
 
             <div className="space-y-8">
               {securityFeatures.map((feature, index) => (
-                <div key={index} className="flex gap-6 group">
-                  <div className={`w-14 h-14 rounded-xl glass-card flex items-center justify-center text-2xl ${feature.colorClass} border border-white/5 shadow-lg group-hover:scale-110 transition-transform duration-300 ${feature.bgClass}`}>
+                <div key={index} className="flex gap-4 md:gap-6 group">
+                  <div className={`w-10 h-10 md:w-14 md:h-14 rounded-xl glass-card flex items-center justify-center text-lg md:text-2xl ${feature.colorClass} border border-white/5 shadow-lg group-hover:scale-110 transition-transform duration-300 ${feature.bgClass}`}>
                     <feature.icon />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">{feature.title}</h3>
-                    <p className="text-muted-foreground">{feature.description}</p>
+                    <h3 className="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">{feature.title}</h3>
+                    <p className="text-sm md:text-base text-muted-foreground">{feature.description}</p>
                   </div>
                 </div>
               ))}
